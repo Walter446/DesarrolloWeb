@@ -10,7 +10,7 @@
     DocumentoDAO dao = new DocumentoDAOImpl();
     List<Documento> docs = dao.listarDocumentosPorUsuario(usuario);
 %>
-<!DOCTYPE html>
+<!DOCTYPE html kkkk>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
