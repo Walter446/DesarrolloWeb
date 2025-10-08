@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class ConexionBD {
+    /*BD LOCAL PARA DAVID*/
     private static final String URL = "jdbc:postgresql://localhost:5432/postgres"; 
     private static final String USER = "Ldrom"; 
     private static final String PASSWORD = "1234"; 
