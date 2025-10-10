@@ -2,7 +2,7 @@ package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-//bd omar
+//bd omar 2da prueba
 public class ConexionBD {
     private static final String URL = "jdbc:postgresql://localhost:5432/postgres"; 
     private static final String USER = "Ldrom"; 
