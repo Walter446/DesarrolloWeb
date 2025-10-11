@@ -99,6 +99,7 @@
     <% } %>
 </section>
 
+
 <!-- FUNCIONALIDADES -->
 <section id="funcionalidades" class="py-16 md:py-20 bg-gradient-to-b from-blue-50 to-white">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
