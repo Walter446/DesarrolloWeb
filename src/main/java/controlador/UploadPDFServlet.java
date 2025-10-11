@@ -3,27 +3,21 @@ package controlador;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
-
+import jakarta.servlet.http.*;
 import modelo.dto.Documento;
 import modelo.dao.DocumentoDAO;
 import modelo.daoimpl.DocumentoDAOImpl;
 import service.PDFService;
-
 import java.io.IOException;
 import java.io.InputStream;
 
 @WebServlet("/UploadPDFServlet")
 @MultipartConfig(
-        fileSizeThreshold = 1024 * 1024,   
-        maxFileSize = 1024 * 1024 * 10,     
-        maxRequestSize = 1024 * 1024 * 50   
+    fileSizeThreshold = 1024 * 1024,   // 1 MB
+    maxFileSize = 1024 * 1024 * 10,    // 10 MB
+    maxRequestSize = 1024 * 1024 * 50  // 50 MB
 )
 public class UploadPDFServlet extends HttpServlet {
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -34,7 +28,7 @@ public class UploadPDFServlet extends HttpServlet {
             return;
         }
 
-        Part filePart = request.getPart("pdf"); 
+        Part filePart = request.getPart("pdf");
         if (filePart == null || filePart.getSize() == 0) {
             request.setAttribute("mensaje", "No se subió ningún archivo.");
             request.getRequestDispatcher("/general/index.jsp").forward(request, response);

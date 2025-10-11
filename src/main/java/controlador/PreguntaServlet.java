@@ -5,7 +5,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
-
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -19,16 +18,22 @@ public class PreguntaServlet extends HttpServlet {
         Part filePart = request.getPart("archivo");
         String pregunta = request.getParameter("pregunta");
 
+        if (filePart == null || filePart.getSize() == 0) {
+            request.setAttribute("respuesta", "No se subió ningún archivo.");
+            request.getRequestDispatcher("/general/resultado.jsp").forward(request, response);
+            return;
+        }
+
         try (InputStream is = filePart.getInputStream()) {
             String texto = PDFService.extraerTexto(is);
             boolean encontrado = texto.toLowerCase().contains(pregunta.toLowerCase());
 
             String respuesta = encontrado ?
-                    "Sí, se encontró información sobre \"" + pregunta + "\" en el PDF." :
-                    "No, no se encontró información sobre \"" + pregunta + "\".";
+                "Sí, se encontró información sobre \"" + pregunta + "\" en el PDF." :
+                "No, no se encontró información sobre \"" + pregunta + "\".";
 
             request.setAttribute("respuesta", respuesta);
-            request.getRequestDispatcher("resultado.jsp").forward(request, response);
+            request.getRequestDispatcher("/general/resultado.jsp").forward(request, response);
         }
     }
 }
