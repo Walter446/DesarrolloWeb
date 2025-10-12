@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 //bd omar 2da prueba
 public class ConexionBD {
     private static final String URL = "jdbc:postgresql://localhost:5432/postgres"; 
-    private static final String USER = "Ldrom"; 
+    private static final String USER = "ldrom"; 
     private static final String PASSWORD = "1234"; 
 
     public static Connection getConnection() {
