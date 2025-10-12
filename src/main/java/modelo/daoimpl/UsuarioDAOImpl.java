@@ -10,7 +10,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
     @Override
     public Usuario validarUsuario(String nombre, String password) {
-        String sql = "SELECT * FROM usuarios WHERE nombre = ? AND password = ?";
+        String sql = "SELECT * FROM usuarios WHERE nombre = ? AND contrasena = ?";
         try (Connection con = ConexionBD.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
@@ -22,7 +22,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
                 Usuario usuario = new Usuario();
                 usuario.setId(rs.getInt("id"));
                 usuario.setNombre(rs.getString("nombre"));
-                usuario.setPassword(rs.getString("password"));
+                usuario.setPassword(rs.getString("contrasena"));
                 return usuario;
             }
         } catch (SQLException e) {
@@ -34,7 +34,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
     @Override
     public boolean registrarUsuario(Usuario usuario) {
-        String sql = "INSERT INTO usuarios (nombre, password) VALUES (?, ?)";
+        String sql = "INSERT INTO usuarios (nombre, contrasena) VALUES (?, ?)";
         try (Connection con = ConexionBD.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 

@@ -10,12 +10,14 @@
     DocumentoDAO dao = new DocumentoDAOImpl();
     List<Documento> docs = dao.listarDocumentosPorUsuario(usuario);
 %>
-<!DOCTYPE html kkkk>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>AluHelp - Panel</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
         html {
             scroll-behavior: smooth;
@@ -51,7 +53,7 @@
 
 <!-- SECCIÓN INICIO -->
 <section id="inicio" class="max-w-7xl mx-auto px-6 py-16 text-center">
-    <h2 class="text-4xl font-bold text-indigo-700 mb-3">¡Hola, <%= usuario %>! 👋</h2>
+    <h2 class="text-4xl font-bold text-indigo-700 mb-3">¡Hola, <%= usuario %>!</h2>
     <p class="text-gray-600 text-lg mb-8">
         Bienvenido a <b>AluHelp</b>, tu asistente inteligente para analizar y resumir documentos PDF.
     </p>
@@ -72,12 +74,15 @@
 
 <!-- SECCIÓN DOCUMENTOS -->
 <section id="documentos" class="max-w-7xl mx-auto px-6 py-16">
-    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">📁 Tus Documentos</h3>
+    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Tus Documentos</h3>
+    
     <% if (docs == null || docs.isEmpty()) { %>
-        <p class="text-center text-gray-500 italic">Aún no has subido ningún documento.</p>
+    <p class="text-center text-gray-500 italic">Aún no has subido ningún documento.</p>
+    
     <% } else { %>
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <% for (Documento d : docs) {
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        
+        <% for (Documento d : docs) {
                 String texto = d.getTexto() != null ? d.getTexto() : "";
             %>
             <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105">
@@ -95,7 +100,7 @@
 <!-- FUNCIONALIDADES -->
 <section id="funcionalidades" class="py-16 bg-gradient-to-b from-indigo-50 to-white">
     <div class="max-w-7xl mx-auto px-6">
-        <h3 class="text-3xl font-bold text-gray-800 mb-10 text-center">✨ Funcionalidades Inteligentes</h3>
+        <h3 class="text-3xl font-bold text-gray-800 mb-10 text-center">Funcionalidades Inteligentes</h3>
 
         <div class="grid gap-10 md:grid-cols-3">
             <!-- Buscar -->
@@ -114,7 +119,7 @@
             <!-- Preguntar -->
             <form action="<%= request.getContextPath() %>/preguntar" method="post" enctype="multipart/form-data"
                   class="p-6 bg-white rounded-2xl shadow hover:shadow-lg border border-indigo-100 transition transform hover:scale-105">
-                <h4 class="text-xl font-semibold mb-3 text-indigo-600">Hacer una pregunta 💬</h4>
+                <h4 class="text-xl font-semibold mb-3 text-indigo-600">Hacer una pregunta</h4>
                 <input type="file" name="archivo" accept="application/pdf" required class="w-full mb-3 text-sm border border-gray-300 rounded-lg">
                 <input type="text" name="pregunta" placeholder="¿Qué deseas saber?" required
                        class="w-full mb-3 text-sm border border-gray-300 rounded-lg p-2">
@@ -127,7 +132,7 @@
             <!-- Resumir -->
             <form action="<%= request.getContextPath() %>/resumir" method="post" enctype="multipart/form-data"
                   class="p-6 bg-white rounded-2xl shadow hover:shadow-lg border border-indigo-100 transition transform hover:scale-105">
-                <h4 class="text-xl font-semibold mb-3 text-indigo-600">Resumir PDF 📄</h4>
+                <h4 class="text-xl font-semibold mb-3 text-indigo-600">Resumir PDF</h4>
                 <input type="file" name="archivo" accept="application/pdf" required
                        class="w-full mb-3 text-sm border border-gray-300 rounded-lg">
                 <button type="submit"
@@ -183,7 +188,7 @@
 
 <!-- CREADORES -->
 <section id="creadores" class="max-w-7xl mx-auto px-6 py-16 text-center">
-    <h3 class="text-3xl font-bold text-gray-800 mb-8">👨‍💻 Creadores</h3>
+    <h3 class="text-3xl font-bold text-gray-800 mb-8">Creadores</h3>
     <div class="grid gap-8 md:grid-cols-3">
         <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition transform hover:scale-105">
             <img src="<%= request.getContextPath() %>/IMAGENES/prueba.jpg"

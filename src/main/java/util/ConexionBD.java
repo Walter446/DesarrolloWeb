@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 
 public class ConexionBD {
     /*BD LOCAL PARA DAVID*/
-    private static final String URL = "jdbc:postgresql://localhost:5432/postgres"; 
-    private static final String USER = "Ldrom"; 
-    private static final String PASSWORD = "1234"; 
+    private static final String URL = "jdbc:postgresql://localhost:5432/aluhelp"; 
+    private static final String USER = "david"; 
+    private static final String PASSWORD = "123456"; 
 
     public static Connection getConnection() {
         Connection con = null;
