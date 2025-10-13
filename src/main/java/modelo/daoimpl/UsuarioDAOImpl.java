@@ -48,7 +48,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
     @Override
     public boolean registrarUsuario(Usuario usuario) {
-        String sql = "INSERT INTO usuarios (nombre, contrasena) VALUES (?, ?)";
+        String sql = "INSERT INTO usuarios (nombre, correo, contrasena) VALUES (?,?,?)";
         try (Connection con = ConexionBD.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 
@@ -56,6 +56,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             // JALA los valores usando los getters de tu DTO
             ps.setString(1, usuario.getDto_nombre());
             ps.setString(2, usuario.getDto_contrasena());
+            ps.setString(3, usuario.getDto_contrasena());
             
             //Actualiza la bd
             return ps.executeUpdate() > 0;

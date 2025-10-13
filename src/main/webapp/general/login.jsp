@@ -35,7 +35,7 @@
     </form>
 
     <p class="text-sm text-center mt-4">
-        ¿No tienes cuenta? <a href="registro.jsp" class="text-blue-600 hover:underline">Regístrate aquí</a>
+        ¿No tienes cuenta? <a href="<%= request.getContextPath() %>/general/registro.jsp" class="text-blue-600 hover:underline">Regístrate aquí</a>
     </p>
 </div>
 </body>

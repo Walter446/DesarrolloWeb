@@ -14,14 +14,18 @@
         <p class="text-red-500 text-sm mb-4"><%= request.getAttribute("error") %></p>
     <% } %>
 
-    <form action="<%= request.getContextPath() %>/general/RegistroServlet" method="post" class="space-y-4">
+    <form action="<%= request.getContextPath() %>/RegistroServlet" method="post" class="space-y-4">
         <div>
             <label class="block text-gray-700">Usuario</label>
-            <input type="text" name="nombre" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-green-300">
+            <input type="text" name="form_nombre_registro" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-green-300">
+        </div>
+        <div>
+            <label class="block text-gray-700">Correo</label>
+            <input type="email" name="form_correo_registro" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-green-300">
         </div>
         <div>
             <label class="block text-gray-700">Contraseña</label>
-            <input type="password" name="password" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-green-300">
+            <input type="password" name="form_contrasena_registro" required class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-green-300">
         </div>
         <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">Registrar</button>
     </form>

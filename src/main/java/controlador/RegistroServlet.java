@@ -14,10 +14,11 @@ public class RegistroServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String nombre = request.getParameter("nombre");
-        String password = request.getParameter("password");
+        String nombre = request.getParameter("form_nombre_registro");
+        String correo = request.getParameter("form_correo_registro");
+        String contrasena = request.getParameter("form_contrasena_registro");
 
-        Usuario nuevoUsuario = new Usuario(0, nombre, password);
+        Usuario nuevoUsuario = new Usuario(0, nombre,correo, contrasena);
         UsuarioDAO dao = new UsuarioDAOImpl();
 
         if (dao.registrarUsuario(nuevoUsuario)) {
