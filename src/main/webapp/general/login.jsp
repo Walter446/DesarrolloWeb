@@ -18,15 +18,16 @@
         <p class="text-green-500 text-sm mb-4">Usuario registrado correctamente, ahora puedes iniciar sesión.</p>
     <% } %>
 
+    <!--EL FORM ENVIA LOS DATOS A LoginServelet CON POST -->
     <form action="<%= request.getContextPath() %>/LoginServlet" method="post" class="space-y-4">
         <div>
             <label class="block text-gray-700">Usuario</label>
-            <input type="text" name="nombre" required 
+            <input type="text" name="form_nombre_login" required 
                    class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300">
         </div>
         <div>
             <label class="block text-gray-700">Contraseña</label>
-            <input type="password" name="password" required 
+            <input type="password" name="form_contrasena_login" required 
                    class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300">
         </div>
         <button type="submit" 

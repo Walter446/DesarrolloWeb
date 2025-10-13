@@ -1,14 +1,15 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="modelo.dto.Documento,modelo.dao.DocumentoDAO,modelo.daoimpl.DocumentoDAOImpl,java.util.*" %>
 <%
-    String usuario = (String) session.getAttribute("usuario");
-    if (usuario == null) {
+    //Aca jala el nombre del usuario logeado que se establecio en LoginServlet
+    String NombreDeUsuarioLogueado = (String) session.getAttribute("NombreDeUsuarioLogueado");
+    if (NombreDeUsuarioLogueado == null) {
         response.sendRedirect(request.getContextPath() + "/general/login.jsp");
         return;
     }
 
     DocumentoDAO dao = new DocumentoDAOImpl();
-    List<Documento> docs = dao.listarDocumentosPorUsuario(usuario);
+    List<Documento> docs = dao.listarDocumentosPorUsuario(NombreDeUsuarioLogueado);
 %>
 <!DOCTYPE html>
 <html lang="es">
@@ -53,7 +54,7 @@
 
 <!-- SECCIÓN INICIO -->
 <section id="inicio" class="max-w-7xl mx-auto px-6 py-16 text-center">
-    <h2 class="text-4xl font-bold text-indigo-700 mb-3">¡Hola, <%= usuario %>!</h2>
+    <h2 class="text-4xl font-bold text-indigo-700 mb-3">¡Hola, <%= NombreDeUsuarioLogueado %>!</h2>
     <p class="text-gray-600 text-lg mb-8">
         Bienvenido a <b>AluHelp</b>, tu asistente inteligente para analizar y resumir documentos PDF.
     </p>
