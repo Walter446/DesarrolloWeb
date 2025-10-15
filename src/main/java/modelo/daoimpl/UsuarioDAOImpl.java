@@ -45,9 +45,13 @@ public class UsuarioDAOImpl implements UsuarioDAO {
         return null;
     }
 
+    //NUEVO USUARIO
     @Override
     public boolean registrarUsuario(Usuario usuario) {
+        //CONSULTA SQL A LA BD
         String sql = "INSERT INTO usuarios (nombre, correo, contrasena) VALUES (?,?,?)";
+        
+        //hace la conexcion a la bd
         try (Connection con = ConexionBD.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
 

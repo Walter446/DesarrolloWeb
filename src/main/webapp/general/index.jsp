@@ -148,19 +148,19 @@
         <section id="creadores" class="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20 text-center">
             <h3 class="text-5xl font-bold text-[#121c38] mb-10">Creadores</h3>
             <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                <div class="bg-[#01587a] p-6 rounded-2xl shadow hover:shadow-lg transition transform hover:scale-105">
+                <div class="bg-[#20587a] p-6 rounded-2xl shadow hover:shadow-lg transition transform hover:scale-105">
                     <img src="<%= request.getContextPath()%>/IMAGENES/david.png"
                          class="w-54 h-54 mx-auto rounded-full mb-4 shadow">
                     <h4 class="font-bold text-lg text-white">Mogollón Acaro Jorge David</h4>
                     <p class="text-white text-sm">Ingeniería de Sistemas</p>
                 </div>
-                <div class="bg-[#01587a] p-6 rounded-2xl shadow hover:shadow-lg transition transform hover:scale-105">
+                <div class="bg-[#20587a] p-6 rounded-2xl shadow hover:shadow-lg transition transform hover:scale-105">
                     <img src="<%= request.getContextPath()%>/IMAGENES/walter.png"
                          class="w-54 h-54 mx-auto rounded-full mb-4 shadow">
                     <h4 class="font-bold text-lg text-white">Walter Juarez Chiroque</h4>
                     <p class="text-white text-sm">Ingeniería de Sistemas</p>
                 </div>
-                <div class="bg-[#01587a] p-6 rounded-2xl shadow hover:shadow-lg transition transform hover:scale-105">
+                <div class="bg-[#20587a] p-6 rounded-2xl shadow hover:shadow-lg transition transform hover:scale-105">
                     <img src="<%= request.getContextPath()%>/IMAGENES/umbo.png"
                          class="w-54 h-54 mx-auto rounded-full mb-4 shadow">
                     <h4 class="font-bold text-lg text-white">Solis Umbo Omar Alexander</h4>

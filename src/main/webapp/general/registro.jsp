@@ -10,10 +10,12 @@
 <div class="bg-white p-8 rounded-2xl shadow-md w-96">
     <h2 class="text-2xl font-bold text-center mb-6">Registro de Usuario</h2>
 
+    <!-- MENSAJE DE ERROR -->
     <% if (request.getAttribute("error") != null) { %>
         <p class="text-red-500 text-sm mb-4"><%= request.getAttribute("error") %></p>
     <% } %>
 
+    <!-- los name se enviaran al servlet -->
     <form action="<%= request.getContextPath() %>/RegistroServlet" method="post" class="space-y-4">
         <div>
             <label class="block text-gray-700">Usuario</label>
