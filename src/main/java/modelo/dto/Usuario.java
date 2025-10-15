@@ -1,37 +1,51 @@
+//PASO UNO USUARIO 
 package modelo.dto;
 
 public class Usuario {
     private int id;
-    private String nombre;
-    private String password;
-
-    public Usuario() {
-    }
-
-    public Usuario(int id, String nombre, String password) {
+    private String dto_nombre;
+    private String dto_contrasena;
+    private String dto_correo;
+    
+    //este constructor sirve para que en el DAO lo llame 
+    public Usuario(){}
+    
+    public Usuario(int id, String dto_nombre,String dto_correo, String dto_contrasena) {
         this.id = id;
-        this.nombre = nombre;
-        this.password = password;
+        this.dto_nombre = dto_nombre;
+        this.dto_correo = dto_correo;
+        this.dto_contrasena = dto_contrasena;
     }
 
     public int getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
+    
+    public String getDto_correo(){
+        return dto_correo;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getDto_nombre() {
+        return dto_nombre;
     }
 
-    public String getPassword() {
-        return password;
+    public String getDto_contrasena() {
+        return dto_contrasena;
     }
-    public void setPassword(String password) {
-        this.password = password;
+    
+    public void setDto_correo(String dto_correo){
+        this.dto_correo=dto_correo;
     }
+
+    public void setDto_nombre(String dto_nombre) {
+        this.dto_nombre = dto_nombre;
+    }
+
+    public void setDto_contrasena(String dto_contrasena) {
+        this.dto_contrasena = dto_contrasena;
+    }
+
+    
+
+    
 }
